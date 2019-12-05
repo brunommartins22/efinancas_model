@@ -8,6 +8,8 @@ package br.com.interagese.syscontabil.models;
 import br.com.interagese.erplibrary.AtributoPadrao;
 import br.com.interagese.padrao.rest.models.Estado;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -19,6 +21,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -37,9 +40,12 @@ public class Cenario implements Serializable {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Estado estado;
+    private String[] regimes;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
-    
+    @Transient
+    private boolean isCheck;
+
     //************************* Equals && Hashcode *****************************
     @Override
     public int hashCode() {
@@ -115,5 +121,29 @@ public class Cenario implements Serializable {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
+    /**
+     * @return the regimes
+     */
+    public String[] getRegimes() {
+        return regimes;
+    }
+
+    /**
+     * @param regimes the regimes to set
+     */
+    public void setRegimes(String[] regimes) {
+        this.regimes = regimes;
+    }
+
+    public boolean isIsCheck() {
+        return isCheck;
+    }
+
+    public void setIsCheck(boolean isCheck) {
+        this.isCheck = isCheck;
+    }
+
+
 
 }
