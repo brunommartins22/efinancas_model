@@ -7,6 +7,7 @@ package br.com.interagese.syscontabil.models;
 
 import br.com.interagese.erplibrary.AtributoPadrao;
 import br.com.interagese.erplibrary.EnderecoPadrao;
+import br.com.interagese.padrao.rest.models.Cnae;
 import br.com.interagese.rest.domain.DominioTipoPessoa;
 import br.com.interagese.syscontabil.domains.DominioRegime;
 import java.io.Serializable;
