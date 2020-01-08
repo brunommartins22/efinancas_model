@@ -6,11 +6,14 @@
 package br.com.interagese.syscontabil.models;
 
 import br.com.interagese.erplibrary.AtributoPadrao;
+import br.com.interagese.syscontabil.domains.DominioTipoProduto;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,6 +40,9 @@ public class ProdutoGeral implements Serializable {
     private String ncm;
     @Column(length = 7)
     private String cest;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private DominioTipoProduto tipoproduto;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
 
@@ -155,5 +161,15 @@ public class ProdutoGeral implements Serializable {
     public void setAtributoPadrao(AtributoPadrao atributoPadrao) {
         this.atributoPadrao = atributoPadrao;
     }
+
+    public DominioTipoProduto getTipoproduto() {
+        return tipoproduto;
+    }
+
+    public void setTipoproduto(DominioTipoProduto tipoproduto) {
+        this.tipoproduto = tipoproduto;
+    }
+
+
 
 }
