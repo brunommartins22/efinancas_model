@@ -42,7 +42,7 @@ public class ProdutoGeral implements Serializable {
     private String cest;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private DominioTipoProduto tipoproduto;
+    private DominioTipoProduto tipoProduto;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
 
@@ -162,12 +162,12 @@ public class ProdutoGeral implements Serializable {
         this.atributoPadrao = atributoPadrao;
     }
 
-    public DominioTipoProduto getTipoproduto() {
-        return tipoproduto;
+    public DominioTipoProduto getTipoProduto() {
+        return tipoProduto;
     }
 
-    public void setTipoproduto(DominioTipoProduto tipoproduto) {
-        this.tipoproduto = tipoproduto;
+    public void setTipoProduto(DominioTipoProduto tipoProduto) {
+        this.tipoProduto = tipoProduto;
     }
 
 
