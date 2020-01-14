@@ -8,7 +8,10 @@ package br.com.interagese.syscontabil.models;
 import br.com.interagese.erplibrary.AtributoPadrao;
 import br.com.interagese.syscontabil.domains.DominioTipoProduto;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -17,6 +20,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -34,7 +38,7 @@ public class ProdutoGeral implements Serializable {
     private Long id;
     @Column(length = 255)
     private String nomeProduto;
-    @Column(length = 14,unique = true)
+    @Column(length = 14, unique = true)
     private Long ean;
     @Column(length = 8, nullable = false)
     private String ncm;
@@ -43,6 +47,8 @@ public class ProdutoGeral implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DominioTipoProduto tipoProduto;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProdutoGeral> listaProdutosCompostos;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
 
@@ -170,8 +176,21 @@ public class ProdutoGeral implements Serializable {
         this.tipoProduto = tipoProduto;
     }
 
+    /**
+     * @return the listaProdutosCompostos
+     */
+    public List<ProdutoGeral> getListaProdutosCompostos() {
+        if (listaProdutosCompostos == null) {
+            listaProdutosCompostos = new ArrayList<>();
+        }
+        return listaProdutosCompostos;
+    }
 
-
-
+    /**
+     * @param listaProdutosCompostos the listaProdutosCompostos to set
+     */
+    public void setListaProdutosCompostos(List<ProdutoGeral> listaProdutosCompostos) {
+        this.listaProdutosCompostos = listaProdutosCompostos;
+    }
 
 }
