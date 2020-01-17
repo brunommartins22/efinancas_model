@@ -22,16 +22,16 @@ import javax.persistence.Table;
  * @author Dinael
  */
 @Entity
-@Table(name="menssagem_inativacao")
-public class MenssagemInativacao implements Serializable {
+@Table(name="mensagem_inativacao")
+public class MensagemInativacao implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_menssagem_inativacao")
-    @SequenceGenerator (name="gen_menssagem_inativacao", sequenceName = "seq_menssagem_inativacao")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_mensagem_inativacao")
+    @SequenceGenerator (name="gen_mensagem_inativacao", sequenceName = "seq_mensagem_inativacao")
     private Long id;
     
     @Column(nullable = false)
-    private String nomeMensssagemInativacao;
+    private String nomeMensagemInativacao;
     
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
@@ -57,7 +57,7 @@ public class MenssagemInativacao implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MenssagemInativacao other = (MenssagemInativacao) obj;
+        final MensagemInativacao other = (MensagemInativacao) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
@@ -73,12 +73,12 @@ public class MenssagemInativacao implements Serializable {
         this.id = id;
     }
 
-    public String getNomeMensssagemInativacao() {
-        return nomeMensssagemInativacao;
+    public String getNomeMensagemInativacao() {
+        return nomeMensagemInativacao;
     }
 
-    public void setNomeMensssagemInativacao(String nomeMensssagemInativacao) {
-        this.nomeMensssagemInativacao = nomeMensssagemInativacao;
+    public void setNomeMensssagemInativacao(String nomeMensagemInativacao) {
+        this.nomeMensagemInativacao = nomeMensagemInativacao;
     }
 
     public AtributoPadrao getAtributoPadrao() {
