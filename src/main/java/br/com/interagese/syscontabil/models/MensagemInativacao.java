@@ -77,7 +77,7 @@ public class MensagemInativacao implements Serializable {
         return nomeMensagemInativacao;
     }
 
-    public void setNomeMensssagemInativacao(String nomeMensagemInativacao) {
+    public void setNomeMensagemInativacao(String nomeMensagemInativacao) {
         this.nomeMensagemInativacao = nomeMensagemInativacao;
     }
 
