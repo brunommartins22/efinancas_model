@@ -7,7 +7,9 @@ package br.com.interagese.syscontabil.models;
 
 import br.com.interagese.erplibrary.AtributoPadrao;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -15,6 +17,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -58,6 +61,9 @@ public class ProdutoCliente implements Serializable {
     private boolean ativo;
     @Column(length = 255)
     private String log;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List <MensagemInativacao> mensagem;
+
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
     @Transient
@@ -322,18 +328,23 @@ public class ProdutoCliente implements Serializable {
         this.ativo = ativo;
     }
 
-    /**
-     * @return the log
-     */
     public String getLog() {
         return log;
     }
 
-    /**
-     * @param log the log to set
-     */
     public void setLog(String log) {
         this.log = log;
     }
+
+    public List <MensagemInativacao> getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(List <MensagemInativacao> mensagem) {
+        this.mensagem = mensagem;
+    }
+
+
+
 
 }

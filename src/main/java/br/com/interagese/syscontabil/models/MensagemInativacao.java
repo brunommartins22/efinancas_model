@@ -27,7 +27,7 @@ public class MensagemInativacao implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_mensagem_inativacao")
-    @SequenceGenerator (name="gen_mensagem_inativacao", sequenceName = "seq_mensagem_inativacao")
+    @SequenceGenerator (name="gen_mensagem_inativacao",initialValue = 1, allocationSize = 1, sequenceName = "seq_mensagem_inativacao")
     private Long id;
     
     @Column(nullable = false)
