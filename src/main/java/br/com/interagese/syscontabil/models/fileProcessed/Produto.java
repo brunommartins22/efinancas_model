@@ -30,7 +30,7 @@ public class Produto {
     private List<ProdutoCenarioJob> listaProdutoCenario;
     private boolean ativo;
     private String log;
-    private List<MensagemInativacao> mensagem;
+    private List<Long> mensagem;
     private AtributoPadrao atributoPadrao;
     private boolean isProdutoGeral;
 
@@ -297,7 +297,7 @@ public class Produto {
     /**
      * @return the mensagem
      */
-    public List<MensagemInativacao> getMensagem() {
+    public List<Long> getMensagem() {
         if (mensagem == null) {
             mensagem = new ArrayList<>();
         }
@@ -307,7 +307,7 @@ public class Produto {
     /**
      * @param mensagem the mensagem to set
      */
-    public void setMensagem(List<MensagemInativacao> mensagem) {
+    public void setMensagem(List<Long> mensagem) {
         this.mensagem = mensagem;
     }
 
