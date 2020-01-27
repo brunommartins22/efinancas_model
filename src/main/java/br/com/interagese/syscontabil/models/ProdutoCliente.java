@@ -61,7 +61,7 @@ public class ProdutoCliente implements Serializable {
     private boolean ativo;
     @Column(length = 255)
     private String log;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     private List <MensagemInativacao> mensagem;
 
     @Embedded
