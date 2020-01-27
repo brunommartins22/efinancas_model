@@ -5,7 +5,6 @@
  */
 package br.com.interagese.syscontabil.dto;
 
-import br.com.interagese.syscontabil.models.MensagemInativacao;
 import br.com.interagese.syscontabil.models.ProdutoCenario;
 import java.util.List;
 
@@ -16,7 +15,7 @@ import java.util.List;
 public class MensagemInativacaoDto {
     
     private List<ProdutoCenario> produtos;
-    private List<MensagemInativacao> mensagens;
+    private List<Long> mensagens;
     
     //********************** get && setts **************************************
 
@@ -28,11 +27,11 @@ public class MensagemInativacaoDto {
         this.produtos = produtos;
     }
 
-    public List<MensagemInativacao> getMensagens() {
+    public List<Long> getMensagens() {
         return mensagens;
     }
 
-    public void setMensagens(List<MensagemInativacao> mensagens) {
+    public void setMensagens(List<Long> mensagens) {
         this.mensagens = mensagens;
     }
     

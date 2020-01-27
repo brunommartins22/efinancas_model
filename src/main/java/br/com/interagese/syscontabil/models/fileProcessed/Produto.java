@@ -5,6 +5,7 @@
  */
 package br.com.interagese.syscontabil.models.fileProcessed;
 
+import br.com.interagese.syscontabil.models.MensagemInativacao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class Produto {
     private List<ProdutoCenarioJob> listaProdutoCenario;
     private boolean ativo;
     private String log;
+    private List<MensagemInativacao> mensagem;
     private AtributoPadrao atributoPadrao;
     private boolean isProdutoGeral;
 
@@ -290,6 +292,23 @@ public class Produto {
      */
     public void setLog(String log) {
         this.log = log;
+    }
+
+    /**
+     * @return the mensagem
+     */
+    public List<MensagemInativacao> getMensagem() {
+        if (mensagem == null) {
+            mensagem = new ArrayList<>();
+        }
+        return mensagem;
+    }
+
+    /**
+     * @param mensagem the mensagem to set
+     */
+    public void setMensagem(List<MensagemInativacao> mensagem) {
+        this.mensagem = mensagem;
     }
 
 }
