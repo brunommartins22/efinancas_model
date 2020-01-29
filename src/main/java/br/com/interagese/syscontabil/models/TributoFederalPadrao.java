@@ -40,6 +40,8 @@ public class TributoFederalPadrao implements Serializable {
     private String cstIpiSaidaPadrao;
     @Column(length = 12)
     private Double aliquotaIpiSaidaPadrao;
+    @Column (length = 256)
+    private String embasamentoJuridicoFed;
 
     /**
      * @return the cstPisEntradaPadrao
@@ -243,6 +245,14 @@ public class TributoFederalPadrao implements Serializable {
      */
     public void setAliquotaIpiSaidaPadrao(Double aliquotaIpiSaidaPadrao) {
         this.aliquotaIpiSaidaPadrao = aliquotaIpiSaidaPadrao;
+    }
+
+    public String getEmbasamentoJuridicoFed() {
+        return embasamentoJuridicoFed;
+    }
+
+    public void setEmbasamentoJuridicoFed(String embasamentoJuridicoFed) {
+        this.embasamentoJuridicoFed = embasamentoJuridicoFed;
     }
 
 }

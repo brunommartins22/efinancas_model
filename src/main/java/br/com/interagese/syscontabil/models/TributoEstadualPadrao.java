@@ -24,6 +24,8 @@ public class TributoEstadualPadrao implements Serializable {
     private String cstIcmsSaidaPadrao;
     @Column(length = 12)
     private Double aliquotaIcmsSaidaPadrao;
+    @Column (length = 256)
+    private String embasamentoJuridicoEst;
 
     //***************************** get && setts *******************************
     /**
@@ -94,6 +96,14 @@ public class TributoEstadualPadrao implements Serializable {
      */
     public void setAliquotaIcmsSaidaPadrao(Double aliquotaIcmsSaidaPadrao) {
         this.aliquotaIcmsSaidaPadrao = aliquotaIcmsSaidaPadrao;
+    }
+
+    public String getEmbasamentoJuridicoEst() {
+        return embasamentoJuridicoEst;
+    }
+
+    public void setEmbasamentoJuridicoEst(String embasamentoJuridicoEst) {
+        this.embasamentoJuridicoEst = embasamentoJuridicoEst;
     }
 
     
