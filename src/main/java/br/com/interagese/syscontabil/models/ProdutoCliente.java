@@ -70,6 +70,8 @@ public class ProdutoCliente implements Serializable {
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
     @Transient
     private boolean isProdutoGeral;
+    @Transient
+    private boolean isComposto;
 
     //************************* Equals && Hashcode *****************************
     @Override
@@ -348,6 +350,20 @@ public class ProdutoCliente implements Serializable {
 
     public void setMensagem(List<MensagemInativacao> mensagem) {
         this.mensagem = mensagem;
+    }
+
+    /**
+     * @return the isComposto
+     */
+    public boolean isIsComposto() {
+        return isComposto;
+    }
+
+    /**
+     * @param isComposto the isComposto to set
+     */
+    public void setIsComposto(boolean isComposto) {
+        this.isComposto = isComposto;
     }
 
 }
