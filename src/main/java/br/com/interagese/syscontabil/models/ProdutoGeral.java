@@ -23,6 +23,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -51,6 +52,8 @@ public class ProdutoGeral implements Serializable {
     private List<ProdutoGeral> listaProdutosCompostos;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
+    @Transient
+    private Long idProdutoCliente;
 
     //************************* Equals && HashCode *****************************
     @Override
@@ -191,6 +194,20 @@ public class ProdutoGeral implements Serializable {
      */
     public void setListaProdutosCompostos(List<ProdutoGeral> listaProdutosCompostos) {
         this.listaProdutosCompostos = listaProdutosCompostos;
+    }
+
+    /**
+     * @return the idProdutoCliente
+     */
+    public Long getIdProdutoCliente() {
+        return idProdutoCliente;
+    }
+
+    /**
+     * @param idProdutoCliente the idProdutoCliente to set
+     */
+    public void setIdProdutoCliente(Long idProdutoCliente) {
+        this.idProdutoCliente = idProdutoCliente;
     }
 
 }
