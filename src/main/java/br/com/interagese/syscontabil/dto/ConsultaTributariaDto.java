@@ -5,9 +5,7 @@
  */
 package br.com.interagese.syscontabil.dto;
 
-import br.com.interagese.syscontabil.models.ProdutoCliente;
 import java.math.BigInteger;
-import java.util.List;
 
 /**
  *
@@ -15,21 +13,17 @@ import java.util.List;
  */
 public class ConsultaTributariaDto {
 
-    private BigInteger idCenario;
+    private String nomeCenario;
     private String nomeProduto;
-    private Long ean;
+    private BigInteger ean;
     private String ncm;
     private String cest;
-
+    private String cstIcmsSaidaPadrao;
+    private String cstCofinsSaidaPadrao;
+    private String cstPisSaidaPadrao;
+    private String cstIpiSaidaPadrao;
+    
     //****************************** get && setts ******************************
-
-    public BigInteger getIdCenario() {
-        return idCenario;
-    }
-
-    public void setIdCenario(BigInteger idCenario) {
-        this.idCenario = idCenario;
-    }
 
     public String getNomeProduto() {
         return nomeProduto;
@@ -39,11 +33,11 @@ public class ConsultaTributariaDto {
         this.nomeProduto = nomeProduto;
     }
 
-    public Long getEan() {
+    public BigInteger getEan() {
         return ean;
     }
 
-    public void setEan(Long ean) {
+    public void setEan(BigInteger ean) {
         this.ean = ean;
     }
 
@@ -61,6 +55,46 @@ public class ConsultaTributariaDto {
 
     public void setCest(String cest) {
         this.cest = cest;
+    }
+
+    public String getNomeCenario() {
+        return nomeCenario;
+    }
+
+    public void setNomeCenario(String nomeCenario) {
+        this.nomeCenario = nomeCenario;
+    }
+
+    public String getCstIcmsSaidaPadrao() {
+        return cstIcmsSaidaPadrao;
+    }
+
+    public void setCstIcmsSaidaPadrao(String cstIcmsSaidaPadrao) {
+        this.cstIcmsSaidaPadrao = cstIcmsSaidaPadrao;
+    }
+
+    public String getCstCofinsSaidaPadrao() {
+        return cstCofinsSaidaPadrao;
+    }
+
+    public void setCstCofinsSaidaPadrao(String cstCofinsSaidaPadrao) {
+        this.cstCofinsSaidaPadrao = cstCofinsSaidaPadrao;
+    }
+
+    public String getCstPisSaidaPadrao() {
+        return cstPisSaidaPadrao;
+    }
+
+    public void setCstPisSaidaPadrao(String cstPisSaidaPadrao) {
+        this.cstPisSaidaPadrao = cstPisSaidaPadrao;
+    }
+
+    public String getCstIpiSaidaPadrao() {
+        return cstIpiSaidaPadrao;
+    }
+
+    public void setCstIpiSaidaPadrao(String cstIpiSaidaPadrao) {
+        this.cstIpiSaidaPadrao = cstIpiSaidaPadrao;
     }
 
 

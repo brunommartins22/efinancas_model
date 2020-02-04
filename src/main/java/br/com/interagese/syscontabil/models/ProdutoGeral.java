@@ -51,6 +51,8 @@ public class ProdutoGeral implements Serializable {
     private List<ProdutoGeral> listaProdutosCompostos;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
+    @Column(length = 5)
+    private String cfop;
 
     //************************* Equals && HashCode *****************************
     @Override
@@ -191,6 +193,14 @@ public class ProdutoGeral implements Serializable {
      */
     public void setListaProdutosCompostos(List<ProdutoGeral> listaProdutosCompostos) {
         this.listaProdutosCompostos = listaProdutosCompostos;
+    }
+
+    public String getCfop() {
+        return cfop;
+    }
+
+    public void setCfop(String cfop) {
+        this.cfop = cfop;
     }
 
 }
