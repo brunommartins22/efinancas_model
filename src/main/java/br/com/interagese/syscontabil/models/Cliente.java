@@ -51,15 +51,15 @@ public class Cliente implements Serializable {
     @Column(length = 30)
     @Enumerated(EnumType.STRING)
     private DominioTipoPessoa tipoCliente;
-    @Column(length = 14, nullable = false, unique = true)
+    @Column(length = 14, nullable = false)
     private String cpfCnpj;
-    @Column(length = 12, nullable = false, unique = true)
+    @Column(length = 12, nullable = false)
     private String rgIe;
-    @Column(length = 12, unique = true)
+    @Column(length = 12)
     private String im;
-    @Column(length = 12, unique = true)
+    @Column(length = 12)
     private String ieSt;
-    @Column(length = 12, unique = true)
+    @Column(length = 12)
     private String suframa;
     @Embedded
     private EnderecoPadrao endereco;
