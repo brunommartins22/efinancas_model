@@ -18,6 +18,7 @@ public class ConsultaTributariaDto {
     private BigInteger ean;
     private String ncm;
     private String cest;
+    private String cfop;
     private String cstIcmsSaidaPadrao;
     private String cstCofinsSaidaPadrao;
     private String cstPisSaidaPadrao;
@@ -95,6 +96,14 @@ public class ConsultaTributariaDto {
 
     public void setCstIpiSaidaPadrao(String cstIpiSaidaPadrao) {
         this.cstIpiSaidaPadrao = cstIpiSaidaPadrao;
+    }
+
+    public String getCfop() {
+        return cfop;
+    }
+
+    public void setCfop(String cfop) {
+        this.cfop = cfop;
     }
 
 

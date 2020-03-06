@@ -45,6 +45,8 @@ public class ProdutoGeral implements Serializable {
     private String ncm;
     @Column(length = 7)
     private String cest;
+    @Column(length = 5)
+    private String cfop;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DominioTipoProduto tipoProduto;
@@ -52,8 +54,6 @@ public class ProdutoGeral implements Serializable {
     private List<ProdutoGeral> listaProdutosCompostos;
     @Embedded
     private AtributoPadrao atributoPadrao = new AtributoPadrao();
-    @Column(length = 5)
-    private String cfop;
     @Transient
     private Long idProdutoCliente;
 
