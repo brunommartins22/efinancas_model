@@ -34,7 +34,7 @@ public class ProdutoCenarioGeral implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_produto_cenario_geral")
-    @SequenceGenerator(name = "gen_produto_cenario_geral", sequenceName = "seq_produto_cenario_geral")
+    @SequenceGenerator(name = "gen_produto_cenario_geral", sequenceName = "seq_produto_cenario_geral", initialValue = 1, allocationSize = 1)
     private Long id;
     @ManyToOne(cascade = CascadeType.ALL)
     private ProdutoGeral produtoGeral;
