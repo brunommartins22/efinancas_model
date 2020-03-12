@@ -35,7 +35,7 @@ public class ProdutoGeral implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_produto_geral")
-    @SequenceGenerator(name = "gen_produto_geral", sequenceName = "seq_produto_geral")
+    @SequenceGenerator(name = "gen_produto_geral", initialValue = 1, allocationSize = 1, sequenceName = "seq_produto_geral")
     private Long id;
     @Column(length = 255)
     private String nomeProduto;
